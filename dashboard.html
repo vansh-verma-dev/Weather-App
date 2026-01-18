@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>TrueBook | Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/book.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+   
 </head>
-<body>
-    <p>dashboard</p>
-    <button onclick="logout()">Logout</button>
+<body class="body">
+  <!-- ----------navbar---------------- -->
+  <nav>
+    <div class="barbtn"><i class="fa-solid fa-bars"></i></div>
+    <h1>True<span style="color: orange;">Book</span></h1>
+  </nav>
+<!-- ------------------ full body container-------------------- -->
+ <div class="container">
+<!-- ------------- slide menu------------- -->
+ <section class="slide-menu"></section>
+ <!-- --------------------main page---------------- -->
+ <section class="main-page"></section>
+ </div>
+
 
 </body>
 <script src="JS/login.js"></script>
 <script>
-    if (localStorage.getItem("truebook_login") !== "true") {
-        window.location.href = "login.html";
-    }
+  if (localStorage.getItem("truebook_login") !== "true") {
+    window.location.href = "login.html";
+  };
+  const barBtn = document.querySelector('.barbtn');
+const slideMenu = document.querySelector('.slide-menu');
+
+barBtn.addEventListener('click', () => {
+  slideMenu.classList.toggle('active');
+});
+
 </script>
 
 </html>
