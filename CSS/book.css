@@ -7,7 +7,7 @@
 /* BODY */
 .body{
   background: #f4f6f8;
-  height: 100vh;
+  /* height: 100vh; */
   width: 100vw;
   overflow: hidden;
 }
@@ -46,37 +46,62 @@ nav .barbtn:hover{
   display: flex;
 }
 
-/* SLIDE MENU */
 .slide-menu{
-  width: 20vw;
-  min-width: 220px;
-  height: 100%;
-  transition: transform 0.3s ease;
-  background-color: rgb(243, 245, 245);
+    width: 220px;
+    height: 90vh;
+    background: #ffffff;
+    padding: 15px 10px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    gap: 8px;
 }
-.slide-menu button{
-    margin-top: 10px;
-    border: none;
-    outline: none;
-    width: 100%;
-    height: 40px;
-    text-align: left;
-    padding-left: 30px;
-    font-size: 18px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 500;
-    color: black;
-    cursor: pointer;
 
+.menu-btn{
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #444;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-.slide-menu button:hover{
-    background-color: white;
+
+.menu-btn i{
+    font-size: 18px;
+    min-width: 22px;
 }
-.slide-menu button i{
-    padding-right: 20px;
-    font-size: 25px;
-    color: blue;
+
+/* Hover effect */
+.menu-btn:hover{
+    background: #f1f5ff;
+    color: #1e40af;
 }
+
+/* Active page */
+.menu-btn.active{
+    background: #2563eb;
+    color: #fff;
+}
+
+/* Logout button alag look */
+.menu-btn.logout{
+    margin-top: auto;
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.menu-btn.logout:hover{
+    background: #fecaca;
+}
+
 
 
 /* MAIN PAGE */
@@ -84,6 +109,135 @@ nav .barbtn:hover{
   flex: 1;
   height: 100%;
 }
+.card-box{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 10px;
+}
+
+/* Card Base */
+.card{
+  height: 100px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  color: #fff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Icon */
+.cardicon{
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: rgba(255,255,255,0.2);
+}
+
+/* Text */
+.cardtext{
+  text-align: right;
+}
+
+.cardtext h2{
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  opacity: 0.9;
+}
+
+.cardtext p{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Card Colors */
+.sales{
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.purchase{
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+.profit{
+  background: linear-gradient(135deg, #fa709a, #fee140);
+}
+
+.cash{
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+.center-container{
+  width: 100%;
+  height: 70vh;
+ display: flex;
+ gap: 10px;
+}
+.transaction-page{
+  margin-left: 10px;
+  width: 58vw;
+  height: 100%;
+  background-color: rgb(216, 213, 213);
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+.transaction-page::-webkit-scrollbar{
+  display: none;
+}
+.transaction-page h2{
+  padding-left: 30px;
+  font-size: 18px;
+}
+.transaction-details{
+  height: 10vh;
+  width: 100%;
+  background-color: white;
+}
+.chart-page{
+  width: 20vw;
+  height: 100%;
+  background-color: rgb(228, 226, 226);
+  border-radius: 10px;
+}
+.chart-box{
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.chart-box h4{
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Mobile */
+@media(max-width: 768px){
+  .card-box{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 480px){
+  .card-box{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
 
 /* ---------------- MOBILE VIEW ---------------- */
 @media (max-width: 768px){
@@ -118,4 +272,11 @@ nav .barbtn:hover{
   .main-page{
     width: 100%;
   }
+  .chart-page{
+ display: none;
+}
+.transaction-page{
+ 
+  width: 100vw;
+}
 }

@@ -18,20 +18,99 @@
 <!-- ------------------ full body container-------------------- -->
  <div class="container">
 <!-- ------------- slide menu------------- -->
- <section class="slide-menu">
-  <button onclick="dashboard()"> <i class="fa-solid fa-house"></i> Dashboard</button>
-  <button onclick="Vouchers()"><i class="fa-solid fa-list-check"></i> Vouchers</button>
-  <button onclick="transaction()"> <i class="fa-solid fa-receipt"></i>All Transaction</button>
-  <button onclick="report()"> <i class="fa-solid fa-chart-line"></i>Reports</button>
-  <button onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
- </section>
+<section class="slide-menu">
+  <button class="menu-btn active" onclick="dashboard()">
+    <i class="fa-solid fa-house"></i>
+    <span>Dashboard</span>
+  </button>
+
+  <button class="menu-btn" onclick="Vouchers()">
+    <i class="fa-solid fa-list-check"></i>
+    <span>Vouchers</span>
+  </button>
+
+  <button class="menu-btn" onclick="transaction()">
+    <i class="fa-solid fa-receipt"></i>
+    <span>All Transactions</span>
+  </button>
+
+  <button class="menu-btn" onclick="report()">
+    <i class="fa-solid fa-chart-line"></i>
+    <span>Reports</span>
+  </button>
+
+  <button class="menu-btn logout" onclick="logout()">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    <span>Log Out</span>
+  </button>
+</section>
+
  <!-- --------------------main page---------------- -->
- <section class="main-page"></section>
+ <section class="main-page">
+  <!-- ---------------Top card--------------- -->
+ <div class="card-box">
+  <div class="card sales">
+    <span class="cardicon">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </span>
+    <span class="cardtext">
+      <h2>Sales</h2>
+      <p>₹ 8,999.99</p>
+    </span>
+  </div>
+
+  <div class="card purchase">
+    <span class="cardicon">
+      <i class="fa-solid fa-bag-shopping"></i>
+    </span>
+    <span class="cardtext">
+      <h2>Purchase</h2>
+      <p>₹ 8,999.99</p>
+    </span>
+  </div>
+
+  <div class="card profit">
+    <span class="cardicon">
+      <i class="fa-solid fa-arrow-trend-up"></i>
+    </span>
+    <span class="cardtext">
+      <h2>Profit</h2>
+      <p>₹ 8,999.99</p>
+    </span>
+  </div>
+
+  <div class="card cash">
+    <span class="cardicon">
+      <i class="fa-solid fa-wallet"></i>
+    </span>
+    <span class="cardtext">
+      <h2>Cash Balance</h2>
+      <p>₹ 8,999.99</p>
+    </span>
+  </div>
+</div>
+<!-- ---------------------containor for transaction or chart section-------------- -->
+ <section class="center-container">
+  <div class="transaction-page">
+    <h2>Recent Transaction</h2>
+    <div class="transaction-details"></div>
+  </div>
+  <div class="chart-page">
+    <h4>Transaction Summary</h4>
+    <canvas id="pieChart"></canvas>
+  </div>
+ </section>
+ </section>
+
+
  </div>
 
 
 </body>
 <script src="JS/login.js"></script>
+<script src="JS/auth.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
   if (localStorage.getItem("truebook_login") !== "true") {
     window.location.href = "login.html";
