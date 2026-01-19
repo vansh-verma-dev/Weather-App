@@ -26,5 +26,27 @@ new Chart(ctx, {
     }
   }
 });
- 
+// ----------------dashboard page------------------
+function dashboard(){
+  window.location.href="dashboard.html"
+};
+
+// ------------------Voucher page-------------------
+function Vouchers(){
+  document.querySelector('.main-page').innerHTML =`
+  <p>voucher</p>
+  `
+};
+// ----------------Transaction page--------------------
+ function transaction(){
+  document.querySelector('.main-page').innerHTML =`
+  <p>transation</p>
+  `
+};
+// ----------------report page--------------------
+function report(){
+  document.querySelector('.main-page').innerHTML =`
+  <p>Report</p>
+  `
+};
 
