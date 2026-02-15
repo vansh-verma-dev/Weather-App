@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>Weather App | Vansh</title>
+<style>
+body{background:#eef5ff}
+.navbar-brand{font-weight:700;letter-spacing:.5px}
+.hero{background:linear-gradient(120deg,#4da3ff,#7cc6ff);color:white;border-radius:16px;padding:28px}
+.weather-card{border-radius:20px}
+.big-temp{font-size:64px;font-weight:700}
+.small-label{font-size:13px;color:#6c757d}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">SkyCast</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Forecast</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Cities</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+      </ul>
+      <div class="d-flex">
+        <input id="cityInput" class="form-control me-2" placeholder="Search city">
+        <button id="searchBtn" class="btn btn-warning">Search</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container my-4">
+
+<!-- HERO -->
+<div class="hero text-center mb-4">
+  <h2 id="city">Delhi</h2>
+  <div id="date">--</div>
+  <div class="big-temp" id="temp">--°</div>
+  <div id="condition">Clear Sky</div>
+</div>
+
+<!-- DETAILS CARD -->
+<div class="card weather-card shadow-sm p-4">
+  <div class="row text-center g-4">
+    <div class="col-6 col-md-3"><div class="small-label">Humidity</div><b id="humidity">--%</b></div>
+    <div class="col-6 col-md-3"><div class="small-label">Wind</div><b id="wind">-- km/h</b></div>
+    <div class="col-6 col-md-3"><div class="small-label">Pressure</div><b id="pressure">-- hPa</b></div>
+    <div class="col-6 col-md-3"><div class="small-label">Feels Like</div><b id="feels">--°</b></div>
+    <div class="col-6 col-md-3"><div class="small-label">Visibility</div><b id="visibility">--</b></div>
+    <div class="col-6 col-md-3"><div class="small-label">Cloud</div><b id="cloud">--%</b></div>
+    <div class="col-6 col-md-3"><div class="small-label">Sunrise</div><b id="sunrise">--</b></div>
+    <div class="col-6 col-md-3"><div class="small-label">Sunset</div><b id="sunset">--</b></div>
+  </div>
+</div>
+
+<h3 class="text-center my-4">Weather of Popular Cities</h3>
+
+<!-- TABLE 10 DATA -->
+<div class="table-responsive">
+<table class="table table-bordered table-hover text-center align-middle">
+<thead class="table-dark">
+<tr>
+<th>City</th>
+<th>Temp</th>
+<th>Feels</th>
+<th>Humidity</th>
+<th>Wind</th>
+<th>Pressure</th>
+<th>Visibility</th>
+<th>Cloud</th>
+<th>Sunrise</th>
+<th>Sunset</th>
+</tr>
+</thead>
+<tbody id="cityTable">
+<tr><td>Delhi</td><td colspan="9">Loading...</td></tr>
+<tr><td>Mumbai</td><td colspan="9">Loading...</td></tr>
+<tr><td>Kolkata</td><td colspan="9">Loading...</td></tr>
+<tr><td>Chennai</td><td colspan="9">Loading...</td></tr>
+<tr><td>London</td><td colspan="9">Loading...</td></tr>
+<tr><td>New York</td><td colspan="9">Loading...</td></tr>
+<tr><td>Tokyo</td><td colspan="9">Loading...</td></tr>
+<tr><td>Dubai</td><td colspan="9">Loading...</td></tr>
+<tr><td>Paris</td><td colspan="9">Loading...</td></tr>
+<tr><td>Singapore</td><td colspan="9">Loading...</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
